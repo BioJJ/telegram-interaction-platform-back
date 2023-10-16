@@ -14,10 +14,8 @@ async function bootstrap() {
 	)
 
 	const config = new DocumentBuilder()
-		.setTitle('transaction-management-api')
-		.setDescription(
-			'Desenvolvimento de Sistema de Gerenciamento de Transações.'
-		)
+		.setTitle('backend')
+		.setDescription('Desenvolvimento de Sistema de Gerenciamento.')
 		.setVersion('1.0')
 		.build()
 
