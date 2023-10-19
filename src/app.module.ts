@@ -8,6 +8,10 @@ import * as Joi from '@hapi/joi'
 import { AuthModule } from './auth/auth.module'
 import { APP_GUARD } from '@nestjs/core'
 import { JwtAuthGuard } from './auth/guards/jwt-auth.guard'
+import { TelegramModule } from './telegram/telegram.module'
+import { BotsModule } from './bots/bots.module'
+import { ChatsModule } from './chats/chats.module'
+import { MessageModule } from './message/message.module'
 
 @Module({
 	imports: [
@@ -23,7 +27,11 @@ import { JwtAuthGuard } from './auth/guards/jwt-auth.guard'
 		}),
 		DatabaseModule,
 		UsersModule,
-		AuthModule
+		AuthModule,
+		TelegramModule,
+		BotsModule,
+		ChatsModule,
+		MessageModule
 	],
 	controllers: [AppController],
 	providers: [

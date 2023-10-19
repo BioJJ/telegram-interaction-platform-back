@@ -1,6 +1,7 @@
-import { Column, Entity, BeforeInsert } from 'typeorm'
+import { Column, Entity, BeforeInsert, ManyToMany } from 'typeorm'
 import { hashSync } from 'bcrypt'
 import { BaseEntity } from 'src/bases/entities/base.entity'
+import { Chat } from 'src/chats/entities/chat.entity'
 
 @Entity()
 export class User extends BaseEntity {
@@ -15,6 +16,9 @@ export class User extends BaseEntity {
 
 	@Column({ default: true })
 	status: boolean
+
+	@ManyToMany(() => Chat, (chat) => chat.users)
+	chats: Chat[]
 
 	@BeforeInsert()
 	hashPassword() {
